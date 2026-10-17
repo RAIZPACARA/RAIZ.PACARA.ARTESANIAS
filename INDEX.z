@@ -3,6 +3,1136 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f1e9">
+<meta name="description" content="Raíz Pacará: objetos artesanales, decoración y flores hechas a mano en Tucumán.">
+<title>Raíz Pacará | Artesanía con raíces</title>
+
+<style>
+:root {
+  --olive:#777d66;
+  --dark:#555d49;
+  --earth:#a88b73;
+  --sand:#f5f1e9;
+  --cream:#fffdf9;
+  --ink:#38372f;
+  --muted:#77766e;
+  --line:#e8e1d6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{
+  outline:2px solid var(--olive);outline-offset:3px;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;object-fit:cover}
+.topline{
+  background:var(--dark);color:white;text-align:center;
+  padding:10px 14px;font-size:11px;letter-spacing:1.2px;
+}
+header{
+  background:rgba(255,253,249,.97);position:sticky;top:0;z-index:20;
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  max-width:1250px;margin:auto;padding:14px 5%;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+}
+.brand{display:flex;align-items:center;gap:11px}
+.brandmark{
+  width:40px;height:40px;border:1px solid var(--olive);border-radius:50%;
+  display:grid;place-items:center;color:var(--olive);font-family:Georgia,serif;
+  font-size:24px;
+}
+.brandname{font-family:Georgia,serif;font-size:21px;letter-spacing:1px}
+.brandsub{font-size:9px;letter-spacing:2px;color:var(--muted);margin-top:4px}
+.navlinks{display:flex;gap:23px;align-items:center;font-size:12px}
+.navlinks a:hover{color:var(--olive)}
+.navactions{display:flex;gap:9px;align-items:center}
+.iconbtn{
+  border:1px solid var(--line);background:transparent;border-radius:50%;
+  width:42px;height:42px;position:relative;color:var(--ink);
+}
+.cartcount{
+  position:absolute;right:-4px;top:-4px;background:var(--olive);color:white;
+  border-radius:50%;font-size:10px;min-width:19px;height:19px;
+  display:grid;place-items:center;
+}
+.mobilemenu{display:none}
+main{min-height:70vh}
+.page{display:none;animation:appear .22s ease}
+.page.active{display:block}
+@keyframes appear{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}
+.container{max-width:1200px;margin:auto;padding:0 5%}
+.hero{
+  display:grid;grid-template-columns:1fr 1fr;min-height:510px;
+  background:var(--sand);
+}
+.hero-copy{padding:75px 10% 70px max(10%,calc((100vw - 1200px)/2));align-self:center}
+.eyebrow{font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--olive)}
+h1,h2,h3,p{margin-top:0}
+h1,h2,.serif{font-family:Georgia,'Times New Roman',serif;font-weight:400}
+h1{font-size:clamp(38px,5vw,64px);line-height:1.08;margin:20px 0}
+.hero-copy p{font-size:14px;line-height:1.9;color:#69675e;max-width:390px}
+.hero-photo{min-height:380px;background:#e7e0d4}
+.hero-photo img{height:100%;min-height:380px}
+.btn{
+  border:1px solid var(--dark);background:var(--dark);color:white;
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 22px;font-size:11px;letter-spacing:.8px;transition:.2s;
+}
+.btn:hover{background:var(--olive);border-color:var(--olive)}
+.btn.light{background:transparent;color:var(--dark)}
+.btn.light:hover{background:var(--dark);color:white}
+.btn.small{padding:10px 13px;font-size:10px}
+.btn.full{width:100%}
+.section{padding:66px 0}
+.sectionhead{text-align:center;margin-bottom:34px}
+.sectionhead h2{font-size:clamp(29px,4vw,42px);margin:13px 0}
+.sectionhead p{font-size:13px;color:var(--muted);line-height:1.8}
+.categorytiles{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.categorytile{
+  position:relative;min-height:230px;background:var(--sand);overflow:hidden;
+  cursor:pointer;border:0;padding:0;text-align:left;
+}
+.categorytile img{height:260px;transition:transform .4s;opacity:.84}
+.categorytile:hover img{transform:scale(1.04)}
+.categorytile span{
+  position:absolute;bottom:0;left:0;right:0;padding:22px;
+  color:white;background:linear-gradient(transparent,rgba(30,30,25,.72));
+  font-family:Georgia,serif;font-size:22px;
+}
+.storystrip{background:var(--sand);padding:52px 0;text-align:center}
+.storystrip p{max-width:630px;margin:15px auto 25px;line-height:1.9;color:#69675e;font-size:14px}
+.pageintro{background:var(--sand);padding:45px 0 35px}
+.pageintro h1{font-size:clamp(34px,5vw,48px);margin:12px 0}
+.pageintro p{font-size:13px;color:var(--muted);line-height:1.8}
+.shoptools{padding:28px 0 20px}
+.searchrow{display:flex;gap:10px;flex-wrap:wrap}
+.searchrow input,.searchrow select,.field input,.field select,.field textarea{
+  width:100%;border:1px solid var(--line);background:white;padding:13px;
+  color:var(--ink);border-radius:0;
+}
+.searchrow input{flex:1;min-width:180px}
+.searchrow select{max-width:240px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.filter{
+  background:transparent;border:1px solid var(--line);padding:10px 14px;
+  border-radius:30px;font-size:11px;color:var(--ink);
+}
+.filter.active,.filter:hover{background:var(--dark);color:white;border-color:var(--dark)}
+.productgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:25px 17px}
+.productcard{min-width:0}
+.productimage{position:relative;background:var(--sand);overflow:hidden;aspect-ratio:4/5}
+.productimage img{height:100%;transition:transform .35s}
+.productcard:hover .productimage img{transform:scale(1.035)}
+.imagefallback{
+  display:none;height:100%;min-height:150px;align-items:center;
+  justify-content:center;flex-direction:column;gap:10px;color:var(--olive);
+  font-family:Georgia,serif;text-align:center;padding:20px;
+}
+.imagefallback span{font-size:32px}
+.productinfo{padding:14px 1px 0}
+.productcat{font-size:9px;letter-spacing:1.1px;text-transform:uppercase;color:var(--muted)}
+.productinfo h3{font-family:Georgia,serif;font-size:18px;font-weight:400;margin:7px 0}
+.productdesc{font-size:11px;line-height:1.65;color:var(--muted);min-height:35px;margin-bottom:10px}
+.productbottom{display:flex;align-items:center;justify-content:space-between;gap:7px;flex-wrap:wrap}
+.price{font-size:14px;font-weight:600}
+.addbtn{border:1px solid var(--olive);color:var(--dark);background:transparent;padding:9px 11px;font-size:10px}
+.addbtn:hover{background:var(--dark);color:white}
+.empty{text-align:center;padding:45px 15px;color:var(--muted);line-height:1.8}
+.storylayout{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.storyimage{background:var(--sand);min-height:370px}
+.storyimage img{height:100%;min-height:370px}
+.storytext p{font-size:14px;line-height:2;color:#69675e}
+.storytext h2{font-size:37px;line-height:1.2}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.value{text-align:center;padding:23px 15px;background:var(--sand)}
+.value strong{font-family:Georgia,serif;font-size:19px;font-weight:400}
+.value p{font-size:12px;color:var(--muted);line-height:1.7;margin:10px 0 0}
+.contactgrid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
+.contactbox{padding:30px;background:var(--sand)}
+.contactbox p{font-size:13px;line-height:1.9;color:#69675e}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:11px;margin-bottom:7px}
+.field textarea{resize:vertical;min-height:80px}
+.checkoutgrid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start}
+.panel{border:1px solid var(--line);padding:25px;background:white}
+.panel h2{font-size:25px}
+.bankrow{padding:13px 0;border-bottom:1px solid var(--line)}
+.banklabel{font-size:10px;color:var(--muted);margin-bottom:5px}
+.bankvalue{font-size:14px;overflow-wrap:anywhere}
+.bankline{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.copybtn{background:transparent;border:1px solid var(--line);padding:7px 9px;font-size:10px}
+.notice{font-size:11px;color:var(--muted);line-height:1.7;background:var(--sand);padding:13px;margin:15px 0}
+.summaryline{display:flex;justify-content:space-between;gap:15px;padding:10px 0;font-size:12px;border-bottom:1px solid var(--line)}
+.summaryline.total{font-size:16px;font-weight:bold;border-bottom:0;padding-top:17px}
+.summaryline.discount{color:var(--dark)}
+.promo{font-size:11px;color:var(--dark);background:#eef0e8;padding:12px;line-height:1.7;margin:12px 0}
+footer{background:var(--dark);color:#fffdf9;margin-top:30px;padding:42px 0 22px}
+.footergrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer h3{font-family:Georgia,serif;font-weight:400;font-size:22px}
+footer p,footer a{font-size:11px;line-height:2;color:#e5e4da}
+.footerlinks{display:flex;flex-direction:column;gap:6px}
+.copyright{border-top:1px solid #ffffff30;margin-top:30px;padding-top:17px;font-size:10px;color:#e5e4da}
+.overlay{display:none;position:fixed;inset:0;background:#17171180;z-index:50}
+.overlay.show{display:block}
+.drawer{
+  position:absolute;right:0;top:0;height:100%;width:min(460px,100%);
+  background:var(--cream);padding:25px;overflow-y:auto;
+}
+.drawerhead{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px}
+.drawerhead h2{font-size:27px;margin:0}
+.closebtn{border:0;background:transparent;font-size:27px;color:var(--ink)}
+.cartitems{padding:10px 0}
+.cartitem{display:grid;grid-template-columns:75px 1fr;gap:13px;padding:15px 0;border-bottom:1px solid var(--line)}
+.cartitem img{height:90px;background:var(--sand)}
+.cartitem h3{font-family:Georgia,serif;font-size:17px;font-weight:400;margin:4px 0 7px}
+.cartitem p{font-size:12px;margin-bottom:9px}
+.cartitem .imagefallback{display:none}
+.qtyrow{display:flex;align-items:center;gap:9px}
+.qtyrow button{border:1px solid var(--line);background:white;width:28px;height:28px}
+.removebtn{border:0;background:transparent;color:var(--muted);font-size:10px;text-decoration:underline}
+.cartfoot{border-top:1px solid var(--line);padding-top:15px}
+.toast{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  background:var(--dark);color:white;padding:13px 20px;font-size:12px;
+  z-index:100;display:none;max-width:90%;text-align:center;
+}
+.toast.show{display:block}
+@media(max-width:800px){
+  .nav{padding:12px 4%;flex-wrap:wrap}
+  .brandname{font-size:18px}
+  .navlinks{display:none;order:3;width:100%;flex-direction:column;align-items:stretch;gap:0}
+  .navlinks.open{display:flex}
+  .navlinks a{padding:13px 0;border-top:1px solid var(--line)}
+  .mobilemenu{display:inline-flex}
+  .hero{grid-template-columns:1fr}
+  .hero-copy{padding:50px 7%}
+  .hero-photo,.hero-photo img{min-height:280px;max-height:400px}
+  .categorytiles{grid-template-columns:1fr 1fr}
+  .categorytile img{height:200px}
+  .productgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}
+  .storylayout,.contactgrid,.checkoutgrid{grid-template-columns:1fr}
+  .storyimage,.storyimage img{min-height:280px}
+  .values{grid-template-columns:1fr}
+  .footergrid{grid-template-columns:1fr 1fr}
+  .footergrid>div:first-child{grid-column:1/-1}
+  .section{padding:45px 0}
+}
+@media(max-width:380px){
+  .brandmark{width:34px;height:34px}
+  .brandname{font-size:16px}
+  .productinfo h3{font-size:16px}
+  .productdesc{font-size:10px}
+  .addbtn{padding:8px;font-size:9px}
+}
+</style>
+</head>
+
+<body>
+<div class="topline">HECHO A MANO, CON TIEMPO, PACIENCIA Y AMOR</div>
+
+<header>
+  <div class="nav">
+    <a href="#inicio" class="brand" onclick="showPage('inicio');return false">
+      <div class="brandmark">R</div>
+      <div>
+        <div class="brandname">Raíz Pacará</div>
+        <div class="brandsub">OBJETOS CON HISTORIA</div>
+      </div>
+    </a>
+
+    <nav class="navlinks" id="navlinks">
+      <a href="#inicio" onclick="showPage('inicio');closeMenu()">Inicio</a>
+      <a href="#productos" onclick="showPage('productos');closeMenu()">Productos</a>
+      <a href="#nosotras" onclick="showPage('nosotras');closeMenu()">Quiénes somos</a>
+      <a href="#contacto" onclick="showPage('contacto');closeMenu()">Contacto</a>
+    </nav>
+
+    <div class="navactions">
+      <button class="iconbtn mobilemenu" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+      <button class="iconbtn" aria-label="Abrir carrito" onclick="openCart()">
+        ♡ <span class="cartcount" id="cartcount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- INICIO -->
+<section class="page active" id="page-inicio">
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">Artesanía · Tucumán</div>
+      <h1>Pequeñas cosas,<br>grandes raíces.</h1>
+      <p>
+        Objetos hechos a mano que encuentran su lugar en tu hogar.
+        Cada pieza tiene su propio tiempo, sus detalles y una historia que contar.
+      </p>
+      <button class="btn" onclick="showPage('productos')">EXPLORAR PRODUCTOS &nbsp; ↗</button>
+    </div>
+    <div class="hero-photo">
+      <img src="SET BRUMA.JPEG" alt="Creaciones artesanales Raíz Pacará"
+        onerror="this.onerror=null;this.src='SET BROTE.JPEG';this.onerror=function(){this.style.display='none';this.parentElement.style.background='#e7e0d4'}">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="sectionhead">
+        <div class="eyebrow">Encontrá tu favorito</div>
+        <h2>Hecho para tus espacios</h2>
+        <p>Piezas artesanales para regalar, decorar y acompañar tus días.</p>
+      </div>
+      <div class="categorytiles">
+        <button class="categorytile" onclick="openCategory('Ramos de flores')">
+          <img src="RAMO ARENA.JPEG" alt="Ramos de flores artesanales"
+            onerror="this.style.display='none'">
+          <span>Ramos de flores ↗</span>
+        </button>
+        <button class="categorytile" onclick="openCategory('Sets de decoración')">
+          <img src="SET BOTÁNICO.JPEG" alt="Sets de decoración"
+            onerror="this.onerror=null;this.src='SET BROTE.JPEG';this.onerror=function(){this.style.display='none'}">
+          <span>Sets de decoración ↗</span>
+        </button>
+        <button class="categorytile" onclick="openCategory('Joyeros y adornos')">
+          <img src="JOYERO NIDO.JPEG" alt="Joyeros y adornos artesanales"
+            onerror="this.style.display='none'">
+          <span>Joyeros y adornos ↗</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="storystrip">
+    <div class="container">
+      <div class="eyebrow">Nuestra esencia</div>
+      <h2 class="serif" style="font-size:35px;margin:12px 0">Cada pieza tiene sus raíces.</h2>
+      <p>Creemos en lo hecho sin apuro, en los pequeños detalles y en el valor de crear con las manos. Queremos que cada objeto encuentre un lugar especial en tu vida.</p>
+      <button class="btn light" onclick="showPage('nosotras')">CONOCÉ NUESTRA HISTORIA</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="sectionhead">
+        <div class="eyebrow">Un regalo diferente</div>
+        <h2>Elegí algo especial</h2>
+        <p>Descubrí nuestras piezas y encontrá esa que parece hecha para vos.</p>
+        <button class="btn" onclick="showPage('productos')">VER TODOS LOS PRODUCTOS</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="page" id="page-productos">
+  <div class="pageintro">
+    <div class="container">
+      <div class="eyebrow">La tienda</div>
+      <h1>Objetos con alma.</h1>
+      <p>Explorá nuestras creaciones artesanales. Cada pieza es única y está hecha con dedicación.</p>
+    </div>
+  </div>
+  <div class="container shoptools">
+    <div class="searchrow">
+      <input id="search" type="search" placeholder="Buscar un producto..." oninput="renderProducts()">
+      <select id="sort" aria-label="Ordenar productos" onchange="renderProducts()">
+        <option value="default">Ordenar por</option>
+        <option value="low">Menor precio</option>
+        <option value="high">Mayor precio</option>
+        <option value="az">Nombre A-Z</option>
+      </select>
+    </div>
+    <div class="filters" id="filters"></div>
+  </div>
+  <div class="container">
+    <div class="productgrid" id="productgrid"></div>
+    <div class="empty" id="noresults" style="display:none">
+      No encontramos productos con esa búsqueda.<br>Probá con otra palabra o categoría.
+    </div>
+  </div>
+  <div style="height:55px"></div>
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section class="page" id="page-nosotras">
+  <div class="pageintro">
+    <div class="container">
+      <div class="eyebrow">Quiénes somos</div>
+      <h1>Una historia hecha a mano.</h1>
+      <p>Dos mujeres, un encuentro y el deseo de crear cosas que tengan sentido.</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="storylayout">
+        <div class="storyimage">
+          <img src="SET BROTE.JPEG" alt="Una creación artesanal de Raíz Pacará"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="storytext">
+          <div class="eyebrow">Nuestra historia</div>
+          <h2>Las raíces sostienen lo que crece.</h2>
+          <p>Raíz Pacará nació del encuentro de dos mujeres que compartían el interés por las artesanías y las ganas de crear.</p>
+          <p>Así como las raíces crecen silenciosamente y sostienen la vida, creemos que detrás de cada objeto hay tiempo, paciencia, dedicación y amor.</p>
+          <p>Cada pieza que hacemos lleva algo de ese proceso: las manos que la trabajan, las ideas que la inspiran y la ilusión de que llegue a un nuevo hogar.</p>
+          <p>Gracias por acompañar este pequeño proyecto y elegir lo hecho a mano.</p>
+          <button class="btn" onclick="showPage('productos')">DESCUBRÍ NUESTRAS PIEZAS</button>
+        </div>
+      </div>
+      <div class="values">
+        <div class="value"><strong>Hecho a mano</strong><p>Cada creación se trabaja con dedicación y atención a los detalles.</p></div>
+        <div class="value"><strong>Con identidad</strong><p>Nos inspiran las texturas, las formas naturales y los tonos de la tierra.</p></div>
+        <div class="value"><strong>Con amor</strong><p>Queremos que cada pieza encuentre un lugar especial en tu hogar.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="page" id="page-contacto">
+  <div class="pageintro">
+    <div class="container">
+      <div class="eyebrow">Estamos para ayudarte</div>
+      <h1>Hablemos.</h1>
+      <p>¿Tenés dudas sobre un producto o querés consultar por una pieza personalizada?</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container contactgrid">
+      <div class="contactbox">
+        <div class="eyebrow">Contacto directo</div>
+        <h2 class="serif" style="font-size:30px;margin:14px 0">Te leemos por WhatsApp.</h2>
+        <p>Consultanos por precios, disponibilidad, pedidos personalizados y opciones de entrega.</p>
+        <button class="btn full" onclick="contactWhatsApp()">ESCRIBINOS POR WHATSAPP ↗</button>
+        <p style="margin-top:20px">Instagram</p>
+        <a class="btn light full" href="https://www.instagram.com/raizpacara.artesanias/" target="_blank" rel="noopener">VISITAR INSTAGRAM ↗</a>
+      </div>
+      <div>
+        <h2 class="serif" style="font-size:30px">Entregas y envíos</h2>
+        <p style="font-size:13px;line-height:1.9;color:var(--muted)">
+          Coordinamos retiros y entregas en San Miguel de Tucumán, Yerba Buena,
+          Tafí Viejo y Lomas de Tafí. El costo del envío se confirma por WhatsApp.
+          Por el momento no realizamos envíos a otras provincias.
+        </p>
+        <p style="font-size:13px;line-height:1.9;color:var(--muted)">
+          Si buscás algo especial, escribinos para consultar si podemos hacerlo
+          a tu gusto.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGO -->
+<section class="page" id="page-pago">
+  <div class="pageintro">
+    <div class="container">
+      <div class="eyebrow">Tu compra</div>
+      <h1>Un último pasito.</h1>
+      <p>Revisá tu pedido, elegí la entrega y encontrá los datos para transferir.</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container checkoutgrid">
+      <div class="panel">
+        <h2>Datos para la entrega</h2>
+        <div class="field">
+          <label for="customerName">Nombre y apellido *</label>
+          <input id="customerName" autocomplete="name" placeholder="Tu nombre completo">
+        </div>
+        <div class="field">
+          <label for="customerPhone">Tu teléfono *</label>
+          <input id="customerPhone" type="tel" autocomplete="tel" placeholder="Tu número de contacto">
+        </div>
+        <div class="field">
+          <label for="delivery">¿Cómo querés recibir tu pedido? *</label>
+          <select id="delivery" onchange="updateCheckout()">
+            <option value="Retiro a coordinar">Retiro a coordinar</option>
+            <option value="Envío">Envío a domicilio</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="zone">Localidad *</label>
+          <select id="zone" onchange="updateCheckout()">
+            <option value="">Elegí tu localidad</option>
+            <option value="San Miguel de Tucumán">San Miguel de Tucumán</option>
+            <option value="Yerba Buena">Yerba Buena</option>
+            <option value="Tafí Viejo">Tafí Viejo</option>
+            <option value="Lomas de Tafí">Lomas de Tafí</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="address">Dirección o referencia (si corresponde)</label>
+          <input id="address" placeholder="Calle, altura, barrio...">
+        </div>
+        <div class="field">
+          <label for="notes">Aclaraciones del pedido (opcional)</label>
+          <textarea id="notes" placeholder="Detalles que quieras comentarnos..."></textarea>
+        </div>
+        <button class="btn full" onclick="sendOrder()">CONFIRMAR PEDIDO POR WHATSAPP ↗</button>
+        <p style="font-size:10px;color:var(--muted);line-height:1.7;margin-top:12px">
+          Al continuar, se abrirá WhatsApp con el detalle de tu compra para coordinar el pedido.
+        </p>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h2>Transferencia bancaria</h2>
+          <p style="font-size:12px;line-height:1.8;color:var(--muted)">
+            Podés realizar la transferencia con estos datos. Revisá el nombre del titular antes de confirmar.
+          </p>
+          <div class="bankrow">
+            <div class="banklabel">Titular</div>
+            <div class="bankvalue">Iris Lorena Antesola</div>
+          </div>
+          <div class="bankrow">
+            <div class="banklabel">Banco / billetera</div>
+            <div class="bankvalue">Naranja X</div>
+          </div>
+          <div class="bankrow">
+            <div class="bankline"><div><div class="banklabel">Alias</div><div class="bankvalue" id="aliasText">iris.0509</div></div>
+            <button class="copybtn" onclick="copyText('iris.0509')">COPIAR</button></div>
+          </div>
+          <div class="bankrow">
+            <div class="bankline"><div><div class="banklabel">CBU</div><div class="bankvalue" id="cbuText">4530000800015796491774</div></div>
+            <button class="copybtn" onclick="copyText('4530000800015796491774')">COPIAR</button></div>
+          </div>
+          <div class="notice">Después de transferir, adjuntá el comprobante en el chat de WhatsApp. El pedido queda pendiente de confirmación hasta que revisemos el pago.</div>
+        </div>
+
+        <div class="panel" style="margin-top:20px">
+          <h2>Resumen de tu pedido</h2>
+          <div id="checkoutitems"></div>
+          <div class="summaryline"><span>Subtotal</span><span id="checkoutsubtotal">$0</span></div>
+          <div class="summaryline discount" id="checkoutdiscountrow" style="display:none"><span>Descuento del 10 %</span><span id="checkoutdiscount">−$0</span></div>
+          <div class="summaryline"><span>Envío</span><span id="checkoutshipping">A coordinar</span></div>
+          <div class="summaryline total"><span>Total de productos</span><span id="checkouttotal">$0</span></div>
+          <div class="promo" id="checkoutpromo">Agregá productos para ver las promociones disponibles.</div>
+          <button class="btn light full" onclick="openCart()">VOLVER AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footergrid">
+      <div>
+        <h3>Raíz Pacará</h3>
+        <p>Artesanías con raíces, creadas a mano y pensadas para encontrar un lugar especial en tu hogar.</p>
+      </div>
+      <div>
+        <h3>Explorá</h3>
+        <div class="footerlinks">
+          <a href="#productos" onclick="showPage('productos');return false">Productos</a>
+          <a href="#nosotras" onclick="showPage('nosotras');return false">Quiénes somos</a>
+          <a href="#contacto" onclick="showPage('contacto');return false">Contacto</a>
+        </div>
+      </div>
+      <div>
+        <h3>Seguinos</h3>
+        <div class="footerlinks">
+          <a href="https://www.instagram.com/raizpacara.artesanias/" target="_blank" rel="noopener">Instagram ↗</a>
+          <a href="#" onclick="contactWhatsApp();return false">WhatsApp ↗</a>
+        </div>
+        <p>Tucumán, Argentina</p>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Raíz Pacará. Hecho con dedicación.</div>
+  </div>
+</footer>
+
+<!-- CARRITO LATERAL -->
+<div class="overlay" id="cartoverlay" onclick="if(event.target===this)closeCart()">
+  <aside class="drawer" role="dialog" aria-modal="true" aria-label="Tu carrito">
+    <div class="drawerhead">
+      <h2 class="serif">Tu carrito</h2>
+      <button class="closebtn" onclick="closeCart()" aria-label="Cerrar carrito">×</button>
+    </div>
+    <div class="cartitems" id="cartitems"></div>
+    <div class="cartfoot">
+      <div class="summaryline"><span>Subtotal</span><strong id="cartsubtotal">$0</strong></div>
+      <div class="summaryline discount" id="cartdiscountrow" style="display:none"><span>Descuento del 10 %</span><strong id="cartdiscount">−$0</strong></div>
+      <div class="summaryline total"><span>Total de productos</span><strong id="carttotal">$0</strong></div>
+      <div class="promo" id="cartpromo"></div>
+      <button class="btn full" onclick="goToCheckout()">CONTINUAR CON LA COMPRA</button>
+      <button class="btn light full" style="margin-top:10px" onclick="closeCart();showPage('productos')">SEGUIR MIRANDO</button>
+    </div>
+  </aside>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+"use strict";
+
+/* DATOS DE LA TIENDA */
+const WHATSAPP = "5493813538008";
+const INSTAGRAM = "https://www.instagram.com/raizpacara.artesanias/";
+
+const categories = [
+  "Todos",
+  "Ramos de flores",
+  "Sets de decoración",
+  "Joyeros y adornos",
+  "Espejos",
+  "Floreros y decoración"
+];
+
+const products = [
+  {id:"ramo-arena",name:"Ramo Arena",cat:"Ramos de flores",price:15000,img:"RAMO ARENA.JPEG",desc:"Ramo de flores de tela realizado a mano."},
+  {id:"ramo-cardo",name:"Ramo Cardo",cat:"Ramos de flores",price:15000,img:"RAMO CARDO.jpg",desc:"Flores de tela con formas y texturas."},
+  {id:"ramo-silvestre",name:"Ramo Silvestre",cat:"Ramos de flores",price:15000,img:"RAMO SILVESTRE .JPEG",desc:"Un ramo artesanal inspirado en la naturaleza."},
+  {id:"ramo-trama",name:"Ramo Trama",cat:"Ramos de flores",price:15000,img:"RAMO TRAMA.JPEG",desc:"Flores de tela con textura y personalidad."},
+  {id:"joyero-nido",name:"Joyero Nido",cat:"Joyeros y adornos",price:3000,img:"JOYERO NIDO.JPEG",desc:"Un pequeño objeto artesanal para tus accesorios."},
+  {id:"set-abra",name:"Set Abra",cat:"Sets de decoración",price:null,img:"SET ABRA.JPEG",desc:"Un conjunto decorativo artesanal."},
+  {id:"set-botanico",name:"Set Botánico",cat:"Sets de decoración",price:25000,img:"SET BOTÁNICO.JPEG",desc:"Una composición decorativa de tonos naturales."},
+  {id:"set-brote",name:"Set Brote",cat:"Sets de decoración",price:25000,img:"SET BROTE.JPEG",desc:"Bandeja ovalada, florero y cuenco en forma de pétalos. No incluye flores."},
+  {id:"set-bruma",name:"Set Bruma",cat:"Sets de decoración",price:25000,img:"SET BRUMA.JPEG",desc:"Bandeja ovalada, florero y contenedor con tapa. No incluye flores."},
+  {id:"set-latido",name:"Set Latido",cat:"Sets de decoración",price:23000,img:"SET LATIDO.JPEG",desc:"Bandeja, florero y figura contemplativa. No incluye flores."},
+  {id:"set-loto",name:"Set Loto",cat:"Sets de decoración",price:25000,img:"SET LOTO.JPEG",desc:"Una composición artesanal para tus espacios."},
+  {id:"set-nudo",name:"Set Nudo",cat:"Sets de decoración",price:15000,img:"SET NUDO .JPEG",desc:"Bandeja, florero y cuenco con relieve."},
+  {id:"set-pausa",name:"Set Pausa",cat:"Sets de decoración",price:null,img:"SET PAUSA.JPEG",desc:"Consultanos por el precio y la disponibilidad."},
+  {id:"set-pensador",name:"Set Pensador",cat:"Sets de decoración",price:23000,img:"SET PENSADOR.JPEG",desc:"Un conjunto decorativo para sumar personalidad."},
+  {id:"set-resguardo",name:"Set Resguardo",cat:"Sets de decoración",price:null,img:"SET RESGUARDO.JPEG",desc:"Una composición decorativa artesanal."},
+  {id:"set-silencio",name:"Set Silencio",cat:"Sets de decoración",price:23000,img:"Set silencio.JPEG",desc:"Bandeja, florero y escultura calada. No incluye flores."},
+  {id:"set-silueta",name:"Set Silueta",cat:"Sets de decoración",price:null,img:"SET SILUETA .JPEG",desc:"Un conjunto artesanal para tus espacios."},
+  {id:"set-calma",name:"Set Calma",cat:"Sets de decoración",price:10000,img:"Set calma.JPEG",desc:"Bandeja ovalada y florero o frasco."}
+];
+
+let activeCategory = "Todos";
+let cart = {};
+try {
+  cart = JSON.parse(localStorage.getItem("raizPacaraCart") || "{}");
+  if (!cart || typeof cart !== "object" || Array.isArray(cart)) cart = {};
+} catch(e) { cart = {}; }
+
+/* UTILIDADES */
+function money(value) {
+  return new Intl.NumberFormat("es-AR", {
+    style:"currency",currency:"ARS",maximumFractionDigits:0
+  }).format(value);
+}
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, ch => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[ch]));
+}
+function saveCart() {
+  try { localStorage.setItem("raizPacaraCart",JSON.stringify(cart)); }
+  catch(e) {}
+}
+function toast(message) {
+  const el = document.getElementById("toast");
+  el.textContent = message;
+  el.classList.add("show");
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => el.classList.remove("show"),2600);
+}
+function contactWhatsApp() {
+  window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(
+    "Hola Raíz Pacará 🌿 Quería hacer una consulta."
+  ),"_blank");
+}
+function closeMenu() {
+  document.getElementById("navlinks").classList.remove("open");
+}
+function toggleMenu() {
+  document.getElementById("navlinks").classList.toggle("open");
+}
+
+/* NAVEGACIÓN: CADA APARTADO FUNCIONA COMO UNA PANTALLA */
+function showPage(name) {
+  const valid = ["inicio","productos","nosotras","contacto","pago"];
+  if (!valid.includes(name)) name = "inicio";
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById("page-"+name).classList.add("active");
+  closeMenu();
+  if (name === "productos") renderProducts();
+  if (name === "pago") updateCheckout();
+  history.replaceState(null,"","#"+name);
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function openCategory(category) {
+  activeCategory = category;
+  showPage("productos");
+  renderProducts();
+}
+
+/* CATEGORÍAS Y PRODUCTOS */
+function renderFilters() {
+  document.getElementById("filters").innerHTML = categories.map(cat =>
+    `<button class="filter ${cat===activeCategory?"active":""}"
+      onclick="setCategory('${cat.replace(/'/g,"\\'")}')">${escapeHTML(cat)}</button>`
+  ).join("");
+}
+function setCategory(category) {
+  activeCategory = category;
+  renderProducts();
+}
+function renderProducts() {
+  renderFilters();
+  const query = (document.getElementById("search")?.value || "").trim().toLowerCase();
+  const sort = document.getElementById("sort")?.value || "default";
+  let list = products.filter(p =>
+    (activeCategory==="Todos" || p.cat===activeCategory) &&
+    (p.name+" "+p.cat+" "+p.desc).toLowerCase().includes(query)
+  );
+  if (sort==="low") list.sort((a,b)=>(a.price ?? Infinity)-(b.price ?? Infinity));
+  if (sort==="high") list.sort((a,b)=>(b.price ?? -Infinity)-(a.price ?? -Infinity));
+  if (sort==="az") list.sort((a,b)=>a.name.localeCompare(b.name,"es"));
+
+  const grid = document.getElementById("productgrid");
+  document.getElementById("noresults").style.display = list.length ? "none" : "block";
+  grid.innerHTML = list.map(p => `
+    <article class="productcard">
+      <div class="productimage">
+        <img src="${escapeHTML(p.img)}" alt="${escapeHTML(p.name)}"
+          loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="imagefallback"><span>✳</span><div>${escapeHTML(p.name)}</div><small>Raíz Pacará</small></div>
+      </div>
+      <div class="productinfo">
+        <div class="productcat">${escapeHTML(p.cat)}</div>
+        <h3>${escapeHTML(p.name)}</h3>
+        <p class="productdesc">${escapeHTML(p.desc)}</p>
+        <div class="productbottom">
+          <span class="price">${p.price===null?"Consultar":money(p.price)}</span>
+          ${p.price===null
+            ? `<button class="addbtn" onclick="askProduct('${p.id}')">CONSULTAR ↗</button>`
+            : `<button class="addbtn" onclick="addToCart('${p.id}')">AGREGAR +</button>`}
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+function askProduct(id) {
+  const p = products.find(x=>x.id===id);
+  if (!p) return;
+  window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(
+    "Hola Raíz Pacará 🌿 Quería consultar el precio y la disponibilidad de "+p.name+"."
+  ),"_blank");
+}
+
+/* CARRITO */
+function cartCount() {
+  return Object.values(cart).reduce((sum,q)=>sum+Math.max(0,Number(q)||0),0);
+}
+function subtotal() {
+  return products.reduce((sum,p)=>sum+(p.price||0)*(Number(cart[p.id])||0),0);
+}
+function discountAmount() {
+  return subtotal()>70000 ? Math.round(subtotal()*0.10) : 0;
+}
+function total() {
+  return subtotal()-discountAmount();
+}
+function addToCart(id) {
+  const p = products.find(x=>x.id===id);
+  if (!p || p.price===null) return;
+  cart[id] = (Number(cart[id])||0)+1;
+  saveCart();
+  renderCart();
+  toast(p.name+" se agregó al carrito");
+}
+function changeQty(id,delta) {
+  cart[id] = (Number(cart[id])||0)+delta;
+  if (cart[id]<=0) delete cart[id];
+  saveCart();
+  renderCart();
+}
+function removeFromCart(id) {
+  delete cart[id];
+  saveCart();
+  renderCart();
+  toast("Producto eliminado");
+}
+function renderCart() {
+  document.getElementById("cartcount").textContent = cartCount();
+  const items = products.filter(p=>(Number(cart[p.id])||0)>0);
+  document.getElementById("cartitems").innerHTML = items.length ? items.map(p=>`
+    <div class="cartitem">
+      <img src="${escapeHTML(p.img)}" alt="${escapeHTML(p.name)}"
+        onerror="this.style.visibility='hidden'">
+      <div>
+        <h3>${escapeHTML(p.name)}</h3>
+        <p>${money(p.price)} c/u</p>
+        <div class="qtyrow">
+          <button aria-label="Restar uno" onclick="changeQty('${p.id}',-1)">−</button>
+          <span>${Number(cart[p.id])||0}</span>
+          <button aria-label="Agregar uno" onclick="changeQty('${p.id}',1)">+</button>
+          <button class="removebtn" onclick="removeFromCart('${p.id}')">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  `).join("") : `<div class="empty">Tu carrito está esperando algo especial.<br><br><button class="btn" onclick="closeCart();showPage('productos')">EXPLORAR PRODUCTOS</button></div>`;
+
+  document.getElementById("cartsubtotal").textContent = money(subtotal());
+  document.getElementById("cartdiscount").textContent = "−"+money(discountAmount());
+  document.getElementById("cartdiscountrow").style.display = discountAmount() ? "flex" : "none";
+  document.getElementById("carttotal").textContent = money(total());
+  document.getElementById("cartpromo").textContent = subtotal()>70000
+    ? "¡Tu compra tiene un 10 % de descuento! Si el envío es a San Miguel de Tucumán, también accedés al envío gratis."
+    : "Superando los $70.000 en productos, obtenés un 10 % de descuento y envío gratis en San Miguel de Tucumán.";
+}
+function openCart() {
+  renderCart();
+  document.getElementById("cartoverlay").classList.add("show");
+  document.body.style.overflow="hidden";
+}
+function closeCart() {
+  document.getElementById("cartoverlay").classList.remove("show");
+  document.body.style.overflow="";
+}
+function goToCheckout() {
+  if (!cartCount()) {
+    toast("Agregá al menos un producto antes de continuar");
+    return;
+  }
+  closeCart();
+  showPage("pago");
+}
+
+/* CHECKOUT Y PROMOCIONES */
+function updateCheckout() {
+  const items = products.filter(p=>(Number(cart[p.id])||0)>0);
+  document.getElementById("checkoutitems").innerHTML = items.length
+    ? items.map(p=>`<div class="summaryline"><span>${Number(cart[p.id])} × ${escapeHTML(p.name)}</span><span>${money(p.price*Number(cart[p.id]))}</span></div>`).join("")
+    : `<p style="font-size:12px;color:var(--muted)">Todavía no agregaste productos.</p>`;
+
+  document.getElementById("checkoutsubtotal").textContent = money(subtotal());
+  document.getElementById("checkoutdiscount").textContent = "−"+money(discountAmount());
+  document.getElementById("checkoutdiscountrow").style.display = discountAmount() ? "flex" : "none";
+  document.getElementById("checkouttotal").textContent = money(total());
+
+  const delivery = document.getElementById("delivery").value;
+  const zone = document.getElementById("zone").value;
+  const freeShipping = subtotal()>70000 && zone==="San Miguel de Tucumán" && delivery==="Envío";
+  document.getElementById("checkoutshipping").textContent =
+    delivery==="Retiro a coordinar" ? "A coordinar" :
+    freeShipping ? "Gratis" : "A coordinar por WhatsApp";
+
+  document.getElementById("checkoutpromo").textContent = subtotal()>70000
+    ? (zone==="San Miguel de Tucumán"
+      ? "¡Promoción aplicada! 10 % de descuento y envío gratis en San Miguel de Tucumán."
+      : "¡Tenés un 10 % de descuento! El envío gratis de la promoción es exclusivo para San Miguel de Tucumán.")
+    : "Con un subtotal superior a $70.000 obtenés un 10 % de descuento y envío gratis en San Miguel de Tucumán.";
+}
+function sendOrder() {
+  if (!cartCount()) {
+    toast("Tu carrito está vacío");
+    return;
+  }
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.trim();
+  const delivery = document.getElementById("delivery").value;
+  const zone = document.getElementById("zone").value;
+  const address = document.getElementById("address").value.trim();
+  const notes = document.getElementById("notes").value.trim();
+
+  if (!name || !phone || !zone) {
+    toast("Completá tu nombre, teléfono y localidad");
+    return;
+  }
+  const freeShipping = subtotal()>70000 && zone==="San Miguel de Tucumán" && delivery==="Envío";
+  const lines = products.filter(p=>(Number(cart[p.id])||0)>0)
+    .map(p=>`• ${Number(cart[p.id])} x ${p.name} — ${money(p.price*Number(cart[p.id]))}`);
+  let message =
+`¡Hola, Raíz Pacará! 🌿 Quiero realizar este pedido.
+
+DATOS DEL CLIENTE
+Nombre: ${name}
+Teléfono: ${phone}
+Entrega: ${delivery}
+Localidad: ${zone}`+
+(address ? `\nDirección/referencia: ${address}` : "")+
+`
+
+MI PEDIDO
+${lines.join("\n")}
+
+Subtotal: ${money(subtotal())}`+
+(discountAmount() ? `\nDescuento 10 %: -${money(discountAmount())}` : "")+
+`\nTotal de productos: ${money(total())}`+
+(delivery==="Envío" ? `\nEnvío: ${freeShipping ? "GRATIS (promoción)" : "A coordinar por WhatsApp"}` : "\nRetiro: a coordinar")+
+(notes ? `\nAclaraciones: ${notes}` : "")+
+`
+
+PAGO
+Voy a realizar el pago por transferencia a:
+Titular: Iris Lorena Antesola
+Naranja X
+Alias: iris.0509
+CBU: 4530000800015796491774
+
+Adjuntaré el comprobante de transferencia por este chat. Por favor, confirmen disponibilidad y el total final con el envío si corresponde.`;
+
+  window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(message),"_blank");
+}
+async function copyText(value) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(value);
+    } else {
+      const input = document.createElement("textarea");
+      input.value = value;
+      input.style.position="fixed";
+      input.style.opacity="0";
+      document.body.appendChild(input);
+      input.select();
+      const ok = document.execCommand("copy");
+      input.remove();
+      if (!ok) throw new Error("No se pudo copiar");
+    }
+    toast("Copiado: "+value);
+  } catch(e) {
+    window.prompt("Copiá este dato:",value);
+  }
+}
+
+/* INICIO */
+document.getElementById("year").textContent = new Date().getFullYear();
+renderProducts();
+renderCart();
+
+const initialPage = location.hash.replace("#","");
+if (["inicio","productos","nosotras","contacto","pago"].includes(initialPage)) {
+  showPage(initialPage);
+}
+window.addEventListener("hashchange",()=>{
+  const name = location.hash.replace("#","");
+  if (["inicio","productos","nosotras","contacto","pago"].includes(name)) {
+    showPage(name);
+  }
+});
+document.addEventListener("keydown",event=>{
+  if (event.key==="Escape") closeCart();
+});
+</script>
+</body>
+</html>
+
+<div class="navactions">
+  <button class="iconbtn mobilemenu"
+          aria-label="Abrir menú"
+          onclick="toggleMenu()">☰</button>
+
+  <button class="cart-header" onclick="openCart()" aria-label="Abrir carrito">
+    <svg viewBox="0 0 24 24" width="22" height="22"
+         fill="none" stroke="currentColor" stroke-width="1.5"
+         stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L21 8H6"/>
+      <circle cx="10" cy="21" r="1"/>
+      <circle cx="18" cy="21" r="1"/>
+    </svg>
+    <span>Mi carrito</span>
+    <span class="cartcount" id="cartcount">0</span>
+  </button>
+</div>
+
+/* CARRITO VISIBLE EN EL ENCABEZADO */
+.cart-header {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 43px;
+  padding: 0 15px;
+  border: 1px solid #777d66;
+  background: #fffdf9;
+  color: #555d49;
+  font-size: 12px;
+  letter-spacing: .3px;
+  transition: background .2s, color .2s;
+}
+
+.cart-header:hover {
+  background: #555d49;
+  color: white;
+}
+
+.cart-header .cartcount {
+  position: static;
+  min-width: 21px;
+  height: 21px;
+  padding: 0 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background: #777d66;
+  color: white;
+  font-size: 10px;
+}
+
+.cart-header:hover .cartcount {
+  background: #fffdf9;
+  color: #555d49;
+}
+
+/* PANEL LATERAL */
+#cartoverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(38, 37, 30, .48);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s, visibility .25s;
+}
+
+#cartoverlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#cartoverlay .drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(440px, 100%);
+  height: 100%;
+  overflow-y: auto;
+  padding: 25px;
+  background: #fffdf9;
+  box-shadow: -8px 0 30px #00000012;
+  transform: translateX(100%);
+  transition: transform .25s ease;
+}
+
+#cartoverlay.show .drawer {
+  transform: translateX(0);
+}
+
+.drawerhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e8e1d6;
+}
+
+.drawerhead h2 {
+  margin: 0;
+  color: #38372f;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.cartitem {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid #e8e1d6;
+}
+
+.cartitem img {
+  width: 82px;
+  height: 96px;
+  object-fit: cover;
+  background: #f5f1e9;
+}
+
+.cartitem h3 {
+  margin: 3px 0 8px;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.qtyrow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.qtyrow button {
+  width: 29px;
+  height: 29px;
+  border: 1px solid #e8e1d6;
+  background: white;
+  color: #555d49;
+}
+
+.qtyrow .removebtn {
+  width: auto;
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  font-size: 11px;
+}
+
+.cartfoot {
+  padding-top: 18px;
+  border-top: 1px solid #e8e1d6;
+}
+
+.cartfoot .summaryline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 13px;
+}
+
+.cartfoot .summaryline.total {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.cartfoot .btn {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 12px;
+}
+
+@media (max-width: 480px) {
+  .cart-header {
+    gap: 6px;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+  #cartoverlay .drawer {
+    padding: 20px 17px;
+  }
+}
+
+document.getElementById("cartcount").textContent = cartCount();
+
+function discountAmount() {
+  return subtotal() >= 70000
+    ? Math.round(subtotal() * 0.10)
+    : 0;
+}
+
+function total() {
+  return subtotal() - discountAmount();
+}
+
+function freeShipping(zone) {
+  return subtotal() >= 70000 &&
+         zone === "San Miguel de Tucumán";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f5f1e9">
 <title>Raíz Pacará | Artesanías</title>
